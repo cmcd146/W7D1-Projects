@@ -12,5 +12,5 @@ export const receiveTodo = (todo) => ({
   todo
 });
 
-window.receiveTodos = receiveTodos;
-window.receiveTodo = receiveTodo;
+// window.receiveTodos = receiveTodos;
+// window.receiveTodo = receiveTodo;
