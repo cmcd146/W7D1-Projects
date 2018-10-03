@@ -24,9 +24,9 @@ class ToDoForm extends React.Component {
   handleInput(event) {
     event.preventDefault();
     const todo = Object.assign({}, this.state, {id: uniqueId()});
-
-    store.dispatch(receiveTodo(todo));
-      this.setState({title: '', body: ''});
+    this.props.createTodo({todo}).then(() =>
+      this.setState({title: '', body: ''})
+    );
   }
 
   render () {

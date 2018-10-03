@@ -19,5 +19,11 @@ export const fetchTodos = () => dispatch => {
     .then(res => dispatch(receiveTodos(res)));
 };
 
-// window.receiveTodos = receiveTodos;
-// window.receiveTodo = receiveTodo;
+export const createTodo = (todo) => dispatch => (
+  todoAPIUtil.createTodo(todo)
+    // .then(res => {dispatch(receiveTodo(res));});
+    .then(
+  todo => dispatch(receiveTodo(todo)),
+  err => dispatch(receiveErrors(err.responseJSON))
+  )
+);
